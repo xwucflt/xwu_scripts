@@ -2,7 +2,13 @@ from kafka import TopicPartition, KafkaConsumer
 import time
 
 def get_offset_for_timestamp(bootstrap_servers, topic, timestamp_ms):
-    consumer = KafkaConsumer(bootstrap_servers=bootstrap_servers, api_version=(2,0,2), consumer_timeout_ms=1000)
+    consumer = KafkaConsumer(bootstrap_servers=bootstrap_servers, 
+                             security_protocol='SASL_SSL',
+                             sasl_mechanism='PLAIN',
+                             sasl_plain_username='apikey',
+                             sasl_plain_password='apisecret',
+                             api_version=(2,0,2), 
+                             consumer_timeout_ms=1000)
     offsets = {}
     try:
         topics = consumer.topics()
@@ -15,7 +21,6 @@ def get_offset_for_timestamp(bootstrap_servers, topic, timestamp_ms):
         tp = TopicPartition(topic, partition)
         print(tp)
         offsets[partition] = consumer.offsets_for_times({tp: timestamp_ms})
-        print("done")
 
     consumer.close()
     # admin_client.close()
@@ -23,19 +28,20 @@ def get_offset_for_timestamp(bootstrap_servers, topic, timestamp_ms):
 
 if __name__ == "__main__":
     # Kafka bootstrap servers
-    bootstrap_servers = 'localhost:9092'
+    bootstrap_servers = '<bootstrapserver>'
 
     # Kafka topic
-    topic = 'lkc-devc5v75dn_mirror_sample_data'
+    topic = 'mirror_sample_data'
 
     # Timestamp (in milliseconds since epoch)
-    timestamp_ms = 1713503069000  # current time
+    timestamp_ms = 1713542362764  # current time
 
     # Calculate offset based on timestamp
     offsets = get_offset_for_timestamp(bootstrap_servers, topic, timestamp_ms)
     
     print("Offsets for timestamp {}: ".format(timestamp_ms))
     for partition_id, offset_and_timestamp in offsets.items():
-        offset_info = offset_and_timestamp[0]
+        print(partition_id, offset_and_timestamp)
+        offset_info = offset_and_timestamp[TopicPartition(topic, partition_id)]
         offset = offset_info.offset if offset_info else "N/A"
         print(f"Partition {partition_id}: Offset {offset}")
