@@ -1,0 +1,9 @@
+{
+    "bootstrap_servers": "pkc-devcj890w2.us-west-2.aws.devel.cpdev.cloud:9092",
+    "topic": "sample_data",
+    "target_timestamp": 1713763139706,
+    "security_protocol": "SASL_SSL",
+    "sasl_mechanism": "PLAIN",
+    "sasl_plain_username": "KJZ2WI7X5H3SUZWU",
+    "sasl_plain_password": "U88flKFKvVMbCt22qXogMiqJtMbj0bgVc1xZ3UiWdJjvIAe4PlBGpT6XapVkPRV4"
+}
