@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+kafka_server_cluster_link_metrics_mirror_topic_lag{tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+kafka_server_cluster_link_metrics_mirror_topic_lag{tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+kafka_server_cluster_link_metrics_mirror_topic_lag{tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+kafka_server_cluster_link_metrics_mirror_topic_lag{tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+kafka_server_cluster_link_metrics_mirror_topic_lag{tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+kafka_server_cluster_link_metrics_mirror_topic_lag{tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
+tenant="lkc-devconqdxx",link_name="Link_0",topic="sample_data",} 0.0
